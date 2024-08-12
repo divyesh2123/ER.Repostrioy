@@ -2,23 +2,27 @@
 
 EmpoyeeRepositroy empoyeeRepositroy = new EmpoyeeRepositroy();
 
-Employee d= new Employee();
+Console.WriteLine("Please Enter EmployeeId");
+int employeeId = Convert.ToInt32(Console.ReadLine());
+empoyeeRepositroy.DeleteEmployee(employeeId);
 
-Console.WriteLine("Please Enter Name");
+//Employee d= new Employee();
 
-d.Name =  Console.ReadLine();
+//Console.WriteLine("Please Enter Name");
 
-Console.WriteLine("Please Enter Address");
+//d.Name =  Console.ReadLine();
 
-d.Address = Console.ReadLine();
+//Console.WriteLine("Please Enter Address");
 
-bool p= empoyeeRepositroy.AddEmployee(d);
+//d.Address = Console.ReadLine();
 
-if(p)
-{
-    Console.WriteLine("Record saved suces.");
-}
-else
-{
-    Console.WriteLine("error");
-}
+//bool p= empoyeeRepositroy.AddEmployee(d);
+
+//if(p)
+//{
+//    Console.WriteLine("Record saved suces.");
+//}
+//else
+//{
+//    Console.WriteLine("error");
+//}

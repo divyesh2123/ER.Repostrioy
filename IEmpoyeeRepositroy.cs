@@ -9,7 +9,6 @@ namespace ConsoleApp5
     public interface IEmpoyeeRepositroy
     {
 
-
         bool AddEmployee(Employee employee);
 
         bool DeleteEmployee(int employeeId);
