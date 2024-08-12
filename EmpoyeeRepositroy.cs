@@ -30,10 +30,6 @@ namespace ConsoleApp5
 
         public bool DeleteEmployee(int employeeId)
         {
-            
-
-           
-
             var d = weltecDatabase.Employees.Where(y => y.Id == employeeId);
             weltecDatabase.Employees.RemoveRange(d);
             int d1 = weltecDatabase.SaveChanges();
@@ -52,12 +48,29 @@ namespace ConsoleApp5
 
         public List<Employee> GetAllEmployees()
         {
-            throw new NotImplementedException();
+            var employee = weltecDatabase.Employees.ToList();
+
+            return employee;
         }
 
         public bool UpdateEmployee(Employee employee)
         {
-            throw new NotImplementedException();
+            var reco = weltecDatabase.Employees.Where(y => y.Id == employee.Id).FirstOrDefault();
+        
+           reco.Name = employee.Name; 
+           reco.Address = employee.Address;
+
+            int d1 = weltecDatabase.SaveChanges();
+            if (d1 > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+
         }
     }
 }
